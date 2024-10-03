@@ -34,7 +34,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #0e0d0d;
     text-decoration: none;
     font-weight: bold;
 }
@@ -135,7 +135,7 @@ li button {
     padding: 0.3em 0.6em;
     border: none;
     background-color: #ff4d4d;
-    color: #fff;
+    color: #f8f1f1;
     cursor: pointer;
     border-radius: 4px;
     margin-left: 0.5em;

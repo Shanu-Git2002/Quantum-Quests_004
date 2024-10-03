@@ -11,6 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeAnalyticsDashboard();
     initializeVoiceCommands(); // Placeholder
     initializeCalendarIntegration(); // Placeholder
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
 });
 
 /* =========================
@@ -70,7 +78,7 @@ function initializePomodoro() {
 /* =========================
    Task Management Module
    ========================= */
-   function initializeTaskManager() {
+function initializeTaskManager() {
     const taskForm = document.getElementById('task-form');
     const taskList = document.getElementById('task-list');
 
@@ -400,6 +408,7 @@ function initializeVoiceCommands() {
     voiceButton.style.border = 'none';
     voiceButton.style.borderRadius = '4px';
     voiceButton.style.cursor = 'pointer';
+    voiceButton.style.zIndex = '1001'; // Above other elements
     document.body.appendChild(voiceButton);
 
     voiceButton.addEventListener('click', () => {

@@ -12,33 +12,88 @@ body {
     color: #333;
 }
 
+/* Header Styles */
 header {
     background-color: #4CAF50;
     color: #fff;
-    padding: 1em 0;
-    text-align: center;
+    padding: 1em 2em;
     position: sticky;
     top: 0;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-size: 1.5em;
+}
+
+nav {
+    position: relative; /* For positioning the dropdown */
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-nav ul li {
-    margin: 0 1em;
+    gap: 1em;
 }
 
 nav ul li a {
-    color: #0e0d0d;
+    color: #0e0e0e;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
+nav ul li a:hover,
+nav ul li a:focus {
+    color: #dcdcdc;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        right: 20px;
+        background-color: #4CAF50;
+        flex-direction: column;
+        width: 200px;
+        padding: 1em;
+        border-radius: 8px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0.5em 0;
+    }
+}
+
+/* Focus States for Accessibility */
+nav ul li a:focus {
+    outline: 2px solid #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Content Styles */
 main {
     padding: 2em;
 }
@@ -76,6 +131,7 @@ main {
     color: #fff;
     cursor: pointer;
     border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 .timer-controls button:hover, .media-controls button:hover {
@@ -104,6 +160,7 @@ form button {
     color: #fff;
     cursor: pointer;
     border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 form button:hover {
@@ -139,6 +196,7 @@ li button {
     cursor: pointer;
     border-radius: 4px;
     margin-left: 0.5em;
+    transition: opacity 0.3s ease;
 }
 
 li button.complete-task {

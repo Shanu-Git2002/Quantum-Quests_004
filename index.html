@@ -1,153 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ProductivePro</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <header>
-        <h1>ProductivePro</h1>
-        <nav>
-            <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation">
-                &#9776; <!-- Hamburger Icon -->
-            </button>
-            <ul id="nav-links">
-                <li><a href="#pomodoro">Pomodoro</a></li>
-                <li><a href="#tasks">Tasks</a></li>
-                <li><a href="#matrix">Matrix</a></li>
-                <li><a href="#links">Links</a></li>
-                <li><a href="#goals">Goals</a></li>
-                <li><a href="#focus">Focus</a></li>
-                <li><a href="#calendar">Calendar</a></li>
-                <li><a href="#analytics">Analytics</a></li>
-            </ul>
-        </nav>
-    </header>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Login and Signup Modals -->
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="close-login">&times;</span>
+        <h2>Login</h2>
+        <form id="login-form">
+          <input type="email" id="login-email" placeholder="Email" required />
+          <input
+            type="password"
+            id="login-password"
+            placeholder="Password"
+            required
+          />
+          <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#" id="show-signup">Sign Up</a></p>
+      </div>
+    </div>
 
-    <main>
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="close-signup">&times;</span>
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+          <input type="email" id="signup-email" placeholder="Email" required />
+          <input
+            type="password"
+            id="signup-password"
+            placeholder="Password"
+            required
+          />
+          <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+      </div>
+    </div>
+
+    <!-- Header -->
+   <header>
+  <h1>ProductivePro</h1>
+  <nav>
+    <button
+      class="menu-toggle"
+      id="mobile-menu"
+      aria-label="Toggle navigation"
+    >
+      &#9776;
+    </button>
+    <ul id="nav-links">
+      <li><a href="#pomodoro">Pomodoro</a></li>
+      <li><a href="#tasks">Tasks</a></li>
+      <li><a href="#matrix">Matrix</a></li>
+      <li><a href="#links">Links</a></li>
+      <li><a href="#goals">Goals</a></li>
+      <li><a href="#focus">Focus</a></li>
+      <li><a href="#calendar">Calendar</a></li>
+      <li><a href="#analytics">Analytics</a></li>
+      <li class="auth-buttons">
+        <button id="login-button">Login</button>
+      </li>
+      <li class="auth-buttons">
+        <button id="signup-button">Sign Up</button>
+      </li>
+      <li id="logout-button" style="display: none">
+        <button>Logout</button>
+      </li>
+      <!-- Removed user email display -->
+    </ul>
+  </nav>
+</header>
+
+    <!-- Main Content Container -->
+    <div id="main-content" style="display: none">
+      <main>
         <!-- Pomodoro Section -->
         <section id="pomodoro" class="section">
-            <h2>Pomodoro Timer</h2>
-            <div class="timer">
-                <span id="pomodoro-timer-display">25:00</span>
-                <div class="timer-controls">
-                    <button id="start-pomodoro">Start</button>
-                    <button id="reset-pomodoro">Reset</button>
-                </div>
+          <h2>Pomodoro Timer</h2>
+          <div class="timer">
+            <span id="pomodoro-timer-display">25:00</span>
+            <div class="timer-controls">
+              <button id="start-pomodoro">Start</button>
+              <button id="reset-pomodoro">Reset</button>
             </div>
-            <div class="stats">
-                <p>Sessions Completed: <span id="pomodoro-sessions">0</span></p>
-            </div>
+          </div>
+          <div class="stats">
+            <p>Sessions Completed: <span id="pomodoro-sessions">0</span></p>
+          </div>
         </section>
 
         <!-- Task Management Section -->
         <section id="tasks" class="section">
-            <h2>Task Management</h2>
-            <form id="task-form">
-                <input type="text" id="task-input" placeholder="New Task" required>
-                <button type="submit">Add Task</button>
-            </form>
-            <ul id="task-list"></ul>
+          <h2>Task Management</h2>
+          <form id="task-form">
+            <input
+              type="text"
+              id="task-input"
+              placeholder="New Task"
+              required
+            />
+            <button type="submit">Add Task</button>
+          </form>
+          <ul id="task-list"></ul>
         </section>
 
         <!-- Urgent Important Matrix Section -->
         <section id="matrix" class="section">
-            <h2>Urgent Important Matrix</h2>
-            <div class="matrix-container">
-                <div class="quadrant" id="quadrant1">
-                    <h3>Urgent & Important</h3>
-                    <ul></ul>
-                </div>
-                <div class="quadrant" id="quadrant2">
-                    <h3>Not Urgent & Important</h3>
-                    <ul></ul>
-                </div>
-                <div class="quadrant" id="quadrant3">
-                    <h3>Urgent & Not Important</h3>
-                    <ul></ul>
-                </div>
-                <div class="quadrant" id="quadrant4">
-                    <h3>Not Urgent & Not Important</h3>
-                    <ul></ul>
-                </div>
+          <h2>Urgent Important Matrix</h2>
+          <div class="matrix-container">
+            <div class="quadrant" id="quadrant1">
+              <h3>Urgent & Important</h3>
+              <ul></ul>
             </div>
-            <div class="gamification">
-                <p>Points: <span id="points">0</span></p>
-                <p>Badges: <span id="badges">None</span></p>
+            <div class="quadrant" id="quadrant2">
+              <h3>Not Urgent & Important</h3>
+              <ul></ul>
             </div>
+            <div class="quadrant" id="quadrant3">
+              <h3>Urgent & Not Important</h3>
+              <ul></ul>
+            </div>
+            <div class="quadrant" id="quadrant4">
+              <h3>Not Urgent & Not Important</h3>
+              <ul></ul>
+            </div>
+          </div>
+          <div class="gamification">
+            <p>Points: <span id="points">0</span></p>
+            <p>Badges: <span id="badges">None</span></p>
+          </div>
         </section>
 
         <!-- Link Organizer Section -->
         <section id="links" class="section">
-            <h2>Link Organizer</h2>
-            <form id="link-form">
-                <input type="url" id="link-input" placeholder="New Link" required>
-                <input type="text" id="link-category" placeholder="Category" required>
-                <button type="submit">Add Link</button>
-            </form>
-            <button id="open-all-links">Open All Links</button>
-            <ul id="link-list"></ul>
+          <h2>Link Organizer</h2>
+          <form id="link-form">
+            <input type="url" id="link-input" placeholder="New Link" required />
+            <input
+              type="text"
+              id="link-category"
+              placeholder="Category"
+              required
+            />
+            <button type="submit">Add Link</button>
+          </form>
+          <button id="open-all-links">Open All Links</button>
+          <ul id="link-list"></ul>
         </section>
 
         <!-- Goal Setting Section -->
         <section id="goals" class="section">
-            <h2>Goal Setting</h2>
-            <form id="goal-form">
-                <input type="text" id="goal-input" placeholder="New Goal" required>
-                <button type="submit">Add Goal</button>
-            </form>
-            <ul id="goal-list"></ul>
+          <h2>Goal Setting</h2>
+          <form id="goal-form">
+            <input
+              type="text"
+              id="goal-input"
+              placeholder="New Goal"
+              required
+            />
+            <button type="submit">Add Goal</button>
+          </form>
+          <ul id="goal-list"></ul>
         </section>
 
         <!-- Focus Timer Section -->
         <section id="focus" class="section">
-            <h2>Focus Timer</h2>
-            <div class="timer">
-                <span id="focus-timer-display">50:00</span>
-                <div class="timer-controls">
-                    <button id="start-focus">Start</button>
-                    <button id="reset-focus">Reset</button>
-                </div>
+          <h2>Focus Timer</h2>
+          <div class="timer">
+            <span id="focus-timer-display">50:00</span>
+            <div class="timer-controls">
+              <button id="start-focus">Start</button>
+              <button id="reset-focus">Reset</button>
             </div>
-            <div class="media-controls">
-                <h3>Focus Music</h3>
-                <select id="music-select">
-                    <option value="none">None</option>
-                    <option value="track1">Track 1</option>
-                    <option value="track2">Track 2</option>
-                </select>
-                <button id="play-music">Play</button>
-                <button id="stop-music">Stop</button>
-            </div>
+          </div>
+          <div class="media-controls">
+            <h3>Focus Music</h3>
+            <select id="music-select">
+              <option value="none">None</option>
+              <option value="track1">Track 1</option>
+              <option value="track2">Track 2</option>
+            </select>
+            <button id="play-music">Play</button>
+            <button id="stop-music">Stop</button>
+          </div>
         </section>
 
         <!-- Google Calendar Integration Section -->
         <section id="calendar" class="section">
-            <h2>Google Calendar</h2>
-            <button id="sync-calendar">Sync with Google Calendar</button>
-            <div id="calendar-view">
-                <!-- Calendar Events will be displayed here -->
-                <p>Google Calendar integration requires backend setup.</p>
-            </div>
+          <h2>Google Calendar</h2>
+          <button id="sync-calendar">Sync with Google Calendar</button>
+          <div id="calendar-view">
+            <!-- Calendar Events will be displayed here -->
+            <p>Please click "Sync with Google Calendar" to view your events.</p>
+            <ul id="calendar-events"></ul>
+          </div>
         </section>
 
         <!-- Analytics Dashboard Section -->
         <section id="analytics" class="section">
-            <h2>Analytics Dashboard</h2>
-            <canvas id="analytics-chart" width="400" height="200"></canvas>
+          <h2>Analytics Dashboard</h2>
+          <canvas id="analytics-chart" width="400" height="200"></canvas>
         </section>
-    </main>
+      </main>
+    </div>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 ProductivePro. All rights reserved.</p>
+      <p>&copy; 2024 ProductivePro. All rights reserved.</p>
     </footer>
 
     <!-- External Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <!-- Load Firebase SDKs -->
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+
+    <!-- Firebase Authentication -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+
+    <!-- Firebase Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+    <!-- Load Google API Client Library -->
+    <script async defer src="https://apis.google.com/js/api.js"></script>
+
+    <!-- Load Google Identity Services -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
     <!-- Main JavaScript -->
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>

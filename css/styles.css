@@ -231,3 +231,106 @@ footer {
     bottom: 0;
     width: 100%;
 }
+/* Google Calendar Styles */
+#calendar-view {
+    margin-top: 1em;
+}
+
+#calendar-events {
+    list-style: none;
+    padding: 0;
+}
+
+#calendar-events li {
+    background-color: #f9f9f9;
+    margin-bottom: 0.5em;
+    padding: 0.75em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1002; /* Above other elements */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 400px; /* Could be more or less, depending on screen size */
+    border-radius: 8px;
+    position: relative;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Auth Buttons */
+  #auth-buttons {
+    display: flex;
+    gap: 0.5em;
+  }
+  
+  #auth-buttons button {
+    padding: 0.5em 1em;
+    border: none;
+    background-color: #fff;
+    color: #4CAF50;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #auth-buttons button:hover {
+    background-color: #e0e0e0;
+  }
+  .hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+#nav-links li {
+    display: inline-block; /* This makes the list items display in a row */
+    margin: 0 10px; /* Add some space between the items */
+  }
+  
+  #nav-links button {
+    background-color: transparent; /* Change as needed */
+    border: none;
+    color: black; /* Ensure the button color matches the text */
+    cursor: pointer;
+  }
+  
+  #nav-links button:hover {
+    text-decoration: underline; /* Add hover effects */
+  }
+  
+  
+

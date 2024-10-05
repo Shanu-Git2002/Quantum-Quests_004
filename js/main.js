@@ -164,11 +164,7 @@ function initializeAuthenticationUI() {
           // Show main content
           mainContent.style.display = 'block';
 
-          // // Optional: Display user email
-          // if (userEmailSpan) {
-          //     userEmailSpan.textContent = user.email;
-          //     userInfo.style.display = 'inline'; // Ensure userInfo is visible
-          // }
+       
 
       } else {
           // No user is signed in

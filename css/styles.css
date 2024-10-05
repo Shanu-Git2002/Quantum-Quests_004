@@ -11,9 +11,13 @@ body {
     background-color: #f4f4f4;
     color: #333;
 }
-
-/* Header Styles */
-header {
+/* Logo Styles */
+.logo {
+    height: 80px; /* Adjust the height as needed */
+    width: auto;  /* Maintains aspect ratio */
+    margin-right: 20px; /* Space between logo and nav */
+  }
+  header {
     background-color: #4CAF50;
     color: #fff;
     padding: 1em 2em;
@@ -23,11 +27,11 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-header h1 {
-    font-size: 1.5em;
-}
+  }
+  header nav {
+    display: flex;
+    align-items: center;
+  }
 
 nav {
     position: relative; /* For positioning the dropdown */

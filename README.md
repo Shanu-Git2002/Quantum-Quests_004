@@ -1,6 +1,6 @@
 # Productivity Pro
 
-![Productivity Pro Banner](assets/images/logo.png)
+![Productivity Pro Banner]([assets/images/logo.png](https://github.com/Shanu-Git2002/Quantum-Quests_004/blob/main/Assests/images/logo.png))
 
 ## Table of Contents
 

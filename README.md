@@ -1,6 +1,6 @@
 # Productivity Pro
 
-![Productivity Pro Banner](assets/images/banner.png)
+![Productivity Pro Banner](assets/images/logo.png)
 
 ## Table of Contents
 

@@ -40,7 +40,7 @@
 
 ## Demo
 
-![To-Do List Screenshot](assets/images/todo-screenshot.png)
+![To-Do List Screenshot](https://github.com/Shanu-Git2002/Quantum-Quests_004/blob/main/Assests/images/Screenshot%20(78).png)
 ![Pomodoro Timer Screenshot](assets/images/pomodoro-screenshot.png)
 ![Notes Section Screenshot](assets/images/notes-screenshot.png)
 
